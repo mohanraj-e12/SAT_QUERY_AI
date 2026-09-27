@@ -1,0 +1,9 @@
+{
+  "model_architecture": "resnet18",
+  "dataset": "EuroSAT RGB",
+  "is_smoke_test": true,
+  "trained": false,
+  "status": "SMOKE_TEST_PASSED",
+  "checkpoint_path": "C:\\Users\\sd638\\OneDrive\\\ubb38\uc11c\\Desktop\\satquery-ai\\backend\\python\\models\\debug\\eurosat_smoke_test.pt",
+  "warning": "DO NOT USE FOR PRODUCTION INFERENCE - THIS IS A TOY SMOKE TEST"
+}

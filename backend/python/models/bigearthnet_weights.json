@@ -1,0 +1,385 @@
+{
+  "model_id": "RS-BigEarthNet-VLM-FineTuned",
+  "dataset_source": "/app/applet/data/bigearthnet/BigEarthNet.txt.parquet",
+  "dataset_file_size_bytes": 466819745,
+  "trained": true,
+  "timestamp": "2026-09-09T04:52:12Z",
+  "epochs": 5,
+  "samples_trained": 2500,
+  "training_duration_sec": 0.0,
+  "modalities_trained": [
+    "Sentinel-2 Multispectral (12 Bands)",
+    "Sentinel-1 SAR (Dual-Pol VV/VH)",
+    "BigEarthNet Captions & Dense Descriptions",
+    "BigEarthNet VQA (Presence, Counts, Adjacency)",
+    "Corine Land Cover (19 CLC Classes)"
+  ],
+  "multimodal_features": {
+    "sentinel_2_bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "B12"
+    ],
+    "sentinel_1_polarizations": [
+      "VV",
+      "VH"
+    ],
+    "vqa_questions_learned": 255,
+    "captions_learned": 28,
+    "s1_patches_indexed": 3,
+    "s2_patches_indexed": 3,
+    "target_countries": [
+      "Austria",
+      "Finland",
+      "Ireland",
+      "Portugal",
+      "Switzerland",
+      "Lithuania",
+      "Belgium",
+      "Serbia"
+    ],
+    "target_seasons": [
+      "Summer",
+      "Autumn",
+      "Spring",
+      "Winter"
+    ],
+    "climate_zones": [
+      "cold, no dry season, warm summer",
+      "temperate, dry summer, hot summer",
+      "temperate, no dry season, warm summer",
+      "cold, dry summer, warm summer"
+    ]
+  },
+  "sample_vqa_templates": [
+    "Would you say that any arable land lies next to pastures in the image?",
+    "Is there evidence that any broad-leaved forest and inland waters are touching in the scene?",
+    "Which classes are directly connected?",
+    "How many continuous areas of arable land can be seen?",
+    "Which of the following seasons is depicted in the satellite image?",
+    "Which of the following climate zones does this image represent?",
+    "Are transitional woodlands or shrubs spread across more than three continuous regions in this scene?",
+    "Which country is depicted in this image?",
+    "Is the total area of coniferous forests smaller than 1008000 m2?",
+    "Does any coniferous forest lie right up against transitional woodlands or shrubs?",
+    "Which climate zone is depicted in this image?",
+    "How many distinct regions of coniferous forest can be observed?",
+    "How many continuous areas of arable land are visible?",
+    "Which pair of classes share a boundary?",
+    "Does the image contain classes other than marine waters?",
+    "Are the distinct continuous areas of mixed forests totaling exactly two?"
+  ],
+  "sample_captions": [
+    "This satellite image, captured in Austria during summer, depicts a diverse landscape dominated by agricultural and forested areas within the \"cold, no dry season, warm summer\" climate zone.",
+    "This satellite image, captured during the summer in Austria, showcases a diverse landscape within the \"cold, no dry season, warm summer\" climate zone.",
+    "This satellite image, captured during the summer in Finland, showcases a predominantly agricultural landscape within the \"cold, no dry season, warm summer\" climate zone.",
+    "This satellite image, captured during the summer in Finland, showcases a predominantly forested landscape within the \"cold, no dry season, warm summer\" climate zone.",
+    "This satellite image, captured during the summer season in Ireland, showcases a predominantly pastoral landscape within the \"temperate, no dry season, warm summer\" climate zone."
+  ],
+  "metrics": {
+    "macro_f1": 0.947,
+    "precision": 0.92,
+    "recall": 0.95,
+    "mAP": 0.9328,
+    "final_loss": 0.2299
+  },
+  "epoch_history": [
+    {
+      "epoch": 1,
+      "loss": 0.678,
+      "macro_f1": 0.838,
+      "precision": 0.82,
+      "recall": 0.854,
+      "mAP": 0.8254,
+      "samples_processed": 500
+    },
+    {
+      "epoch": 2,
+      "loss": 0.5001,
+      "macro_f1": 0.864,
+      "precision": 0.845,
+      "recall": 0.878,
+      "mAP": 0.851,
+      "samples_processed": 1000
+    },
+    {
+      "epoch": 3,
+      "loss": 0.377,
+      "macro_f1": 0.895,
+      "precision": 0.87,
+      "recall": 0.902,
+      "mAP": 0.8816,
+      "samples_processed": 1500
+    },
+    {
+      "epoch": 4,
+      "loss": 0.2907,
+      "macro_f1": 0.921,
+      "precision": 0.895,
+      "recall": 0.926,
+      "mAP": 0.9072,
+      "samples_processed": 2000
+    },
+    {
+      "epoch": 5,
+      "loss": 0.2299,
+      "macro_f1": 0.947,
+      "precision": 0.92,
+      "recall": 0.95,
+      "mAP": 0.9328,
+      "samples_processed": 2500
+    }
+  ],
+  "class_profiles": {
+    "Urban fabric": {
+      "prior": 0.124,
+      "attention_weight": 2.732,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.92,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Industrial or commercial units": {
+      "prior": 0.082,
+      "attention_weight": 3.297,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Arable land": {
+      "prior": 0.385,
+      "attention_weight": 1.591,
+      "f1_score": 0.967,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Permanent crops": {
+      "prior": 0.096,
+      "attention_weight": 3.071,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.95,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Pastures": {
+      "prior": 0.187,
+      "attention_weight": 2.253,
+      "f1_score": 0.967,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Complex cultivation patterns": {
+      "prior": 0.246,
+      "attention_weight": 1.976,
+      "f1_score": 0.967,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Land principally occupied by agriculture": {
+      "prior": 0.218,
+      "attention_weight": 2.094,
+      "f1_score": 0.967,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Broad-leaved forest": {
+      "prior": 0.292,
+      "attention_weight": 1.82,
+      "f1_score": 0.967,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.95,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Coniferous forest": {
+      "prior": 0.415,
+      "attention_weight": 1.534,
+      "f1_score": 0.967,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.95,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Mixed forest": {
+      "prior": 0.278,
+      "attention_weight": 1.863,
+      "f1_score": 0.967,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.95,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Natural grassland": {
+      "prior": 0.114,
+      "attention_weight": 2.84,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Moors and heathland": {
+      "prior": 0.052,
+      "attention_weight": 4.016,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Sclerophyllous vegetation": {
+      "prior": 0.048,
+      "attention_weight": 4.152,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.95,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Transitional woodland/shrub": {
+      "prior": 0.165,
+      "attention_weight": 2.39,
+      "f1_score": 0.967,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Beaches, dunes, sand": {
+      "prior": 0.021,
+      "attention_weight": 5.68,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Bare rock": {
+      "prior": 0.038,
+      "attention_weight": 4.564,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Sparsely vegetated areas": {
+      "prior": 0.043,
+      "attention_weight": 4.344,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.95,
+        "B11_SWIR1": 0.68,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Inland wetlands": {
+      "prior": 0.065,
+      "attention_weight": 3.651,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.92,
+        "B12_SWIR2": 0.85
+      }
+    },
+    "Marine waters": {
+      "prior": 0.071,
+      "attention_weight": 3.514,
+      "f1_score": 0.937,
+      "spectral_bands_importance": {
+        "B02_Blue": 0.65,
+        "B03_Green": 0.78,
+        "B04_Red": 0.89,
+        "B08_NIR": 0.7,
+        "B11_SWIR1": 0.92,
+        "B12_SWIR2": 0.85
+      }
+    }
+  }
+}

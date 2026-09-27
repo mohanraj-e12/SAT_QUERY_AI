@@ -1,0 +1,214 @@
+{
+  "benchmark_name": "SatQueryAI Multimodal Remote-Sensing Benchmark",
+  "evaluation_date": "2026-09-25 15:40:10 UTC",
+  "total_test_samples": 10,
+  "geographic_leakage_prevented": true,
+  "train_test_split_isolation": "Strict Geographic Separation (Austria/Germany vs Finland/Ireland)",
+  "metrics": {
+    "multilabel_micro_f1": 0.1176,
+    "multilabel_macro_f1": 0.125,
+    "precision": 0.0833,
+    "recall": 0.2,
+    "vqa_answer_accuracy": 0.4,
+    "expected_calibration_error_ece": 0.35,
+    "retrieval_recall_at_3": 0.5
+  },
+  "sample_evaluations": [
+    {
+      "test_id": "test_001",
+      "question": "What type of land cover is visible in this image?",
+      "task": "land_cover",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland wetlands",
+        "Natural grassland and sparsely vegetated areas",
+        "Pastures"
+      ],
+      "is_correct": false,
+      "confidence": 0.58
+    },
+    {
+      "test_id": "test_002",
+      "question": "Does the satellite image contain visible water bodies or wetlands?",
+      "task": "water_detection",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland wetlands",
+        "Natural grassland and sparsely vegetated areas",
+        "Pastures"
+      ],
+      "is_correct": false,
+      "confidence": 0.58
+    },
+    {
+      "test_id": "test_003",
+      "question": "Is natural vegetation or forest canopy present in this scene?",
+      "task": "vegetation_analysis",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland wetlands",
+        "Natural grassland and sparsely vegetated areas",
+        "Pastures"
+      ],
+      "is_correct": false,
+      "confidence": 0.58
+    },
+    {
+      "test_id": "test_004",
+      "question": "Is there evidence of urban development or built-up infrastructure?",
+      "task": "urban_feature_analysis",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland wetlands",
+        "Natural grassland and sparsely vegetated areas",
+        "Pastures"
+      ],
+      "is_correct": false,
+      "confidence": 0.58
+    },
+    {
+      "test_id": "test_005",
+      "question": "What type of land cover is visible in this image?",
+      "task": "land_cover",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland waters",
+        "Coniferous forest"
+      ],
+      "is_correct": true,
+      "confidence": 0.88
+    },
+    {
+      "test_id": "test_006",
+      "question": "What percentage of this image is water?",
+      "task": "water_detection",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland waters",
+        "Coniferous forest"
+      ],
+      "is_correct": true,
+      "confidence": 0.88
+    },
+    {
+      "test_id": "test_007",
+      "question": "Explain the ecological scene structure.",
+      "task": "urban_feature_analysis",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland waters",
+        "Coniferous forest"
+      ],
+      "is_correct": true,
+      "confidence": 0.88
+    },
+    {
+      "test_id": "test_008",
+      "question": "Are there buildings or roads in this image?",
+      "task": "urban_feature_analysis",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland waters",
+        "Coniferous forest"
+      ],
+      "is_correct": true,
+      "confidence": 0.88
+    },
+    {
+      "test_id": "test_009",
+      "question": "What spectral and spatial evidence supports the classification?",
+      "task": "land_cover",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland waters",
+        "Coniferous forest"
+      ],
+      "is_correct": true,
+      "confidence": 0.88
+    },
+    {
+      "test_id": "test_010",
+      "question": "What agricultural patterns are visible?",
+      "task": "agriculture",
+      "predicted_classes": [
+        "Broad-leaved forest",
+        "Mixed forest",
+        "Inland waters",
+        "Industrial or commercial units",
+        "Water bodies",
+        "Urban fabric"
+      ],
+      "ground_truth_classes": [
+        "Inland wetlands",
+        "Natural grassland and sparsely vegetated areas",
+        "Pastures"
+      ],
+      "is_correct": false,
+      "confidence": 0.58
+    }
+  ],
+  "evaluation_duration_sec": 0.001
+}

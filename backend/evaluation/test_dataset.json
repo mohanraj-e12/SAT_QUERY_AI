@@ -1,0 +1,111 @@
+{
+  "dataset_name": "SatQueryAI Independent Remote-Sensing Benchmark",
+  "version": "2.0",
+  "geographic_splits": {
+    "train_regions": ["Austria", "Germany", "Portugal", "Serbia"],
+    "test_regions": ["Finland", "Ireland"]
+  },
+  "leakage_prevention": "Strict zero-leakage geographic separation across UTM zones.",
+  "samples": [
+    {
+      "test_id": "test_001",
+      "patch_id": "S2A_MSIL2A_20170529T112121_N0205_R037_T29UNE_77_14",
+      "country": "Ireland",
+      "utm_zone": "29UNE",
+      "ground_truth_labels": ["Pastures", "Inland wetlands", "Natural grassland and sparsely vegetated areas"],
+      "question": "What type of land cover is visible in this image?",
+      "expected_task": "land_cover",
+      "expected_keywords": ["pastures", "wetlands", "grassland"]
+    },
+    {
+      "test_id": "test_002",
+      "patch_id": "S2A_MSIL2A_20170529T112121_N0205_R037_T29UNE_77_14",
+      "country": "Ireland",
+      "utm_zone": "29UNE",
+      "ground_truth_labels": ["Pastures", "Inland wetlands", "Natural grassland and sparsely vegetated areas"],
+      "question": "Does the satellite image contain visible water bodies or wetlands?",
+      "expected_task": "water_detection",
+      "expected_keywords": ["wetlands", "moisture", "water"]
+    },
+    {
+      "test_id": "test_003",
+      "patch_id": "S2A_MSIL2A_20170529T112121_N0205_R037_T29UNE_77_14",
+      "country": "Ireland",
+      "utm_zone": "29UNE",
+      "ground_truth_labels": ["Pastures", "Inland wetlands", "Natural grassland and sparsely vegetated areas"],
+      "question": "Is natural vegetation or forest canopy present in this scene?",
+      "expected_task": "vegetation_analysis",
+      "expected_keywords": ["vegetation", "grassland", "pastures"]
+    },
+    {
+      "test_id": "test_004",
+      "patch_id": "S2A_MSIL2A_20170529T112121_N0205_R037_T29UNE_77_14",
+      "country": "Ireland",
+      "utm_zone": "29UNE",
+      "ground_truth_labels": ["Pastures", "Inland wetlands", "Natural grassland and sparsely vegetated areas"],
+      "question": "Is there evidence of urban development or built-up infrastructure?",
+      "expected_task": "urban_feature_analysis",
+      "expected_keywords": ["no", "minimal", "non-dominant"]
+    },
+    {
+      "test_id": "test_005",
+      "patch_id": "S2B_MSIL2A_20170814T095029_N0205_R079_T35VNJ_22_60",
+      "country": "Finland",
+      "utm_zone": "35VNJ",
+      "ground_truth_labels": ["Coniferous forest", "Inland waters"],
+      "question": "What type of land cover is visible in this image?",
+      "expected_task": "land_cover",
+      "expected_keywords": ["coniferous", "forest", "water"]
+    },
+    {
+      "test_id": "test_006",
+      "patch_id": "S2B_MSIL2A_20170814T095029_N0205_R079_T35VNJ_22_60",
+      "country": "Finland",
+      "utm_zone": "35VNJ",
+      "ground_truth_labels": ["Coniferous forest", "Inland waters"],
+      "question": "What percentage of this image is water?",
+      "expected_task": "water_detection",
+      "expected_keywords": ["water", "%", "lake"]
+    },
+    {
+      "test_id": "test_007",
+      "patch_id": "S2B_MSIL2A_20170814T095029_N0205_R079_T35VNJ_22_60",
+      "country": "Finland",
+      "utm_zone": "35VNJ",
+      "ground_truth_labels": ["Coniferous forest", "Inland waters"],
+      "question": "Explain the ecological scene structure.",
+      "expected_task": "scene_description",
+      "expected_keywords": ["boreal", "taiga", "coniferous", "lake"]
+    },
+    {
+      "test_id": "test_008",
+      "patch_id": "S2B_MSIL2A_20170814T095029_N0205_R079_T35VNJ_22_60",
+      "country": "Finland",
+      "utm_zone": "35VNJ",
+      "ground_truth_labels": ["Coniferous forest", "Inland waters"],
+      "question": "Are there buildings or roads in this image?",
+      "expected_task": "urban_feature_analysis",
+      "expected_keywords": ["sparse", "no substantial", "rural"]
+    },
+    {
+      "test_id": "test_009",
+      "patch_id": "S2B_MSIL2A_20170814T095029_N0205_R079_T35VNJ_22_60",
+      "country": "Finland",
+      "utm_zone": "35VNJ",
+      "ground_truth_labels": ["Coniferous forest", "Inland waters"],
+      "question": "What spectral and spatial evidence supports the classification?",
+      "expected_task": "evidence_extraction",
+      "expected_keywords": ["absorption", "reflectance", "edge"]
+    },
+    {
+      "test_id": "test_010",
+      "patch_id": "S2A_MSIL2A_20170529T112121_N0205_R037_T29UNE_77_14",
+      "country": "Ireland",
+      "utm_zone": "29UNE",
+      "ground_truth_labels": ["Pastures", "Inland wetlands", "Natural grassland and sparsely vegetated areas"],
+      "question": "What agricultural patterns are visible?",
+      "expected_task": "agriculture",
+      "expected_keywords": ["pasture", "grazing", "fields"]
+    }
+  ]
+}

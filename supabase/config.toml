@@ -1,0 +1,16 @@
+# Supabase CLI configuration for SatQuery AI
+project_id = "satquery-ai"
+
+[api]
+port = 54321
+schemas = ["public", "storage"]
+
+[db]
+port = 54322
+
+[studio]
+port = 54323
+
+[storage]
+enabled = true
+buckets = ["satellite-images", "analysis-results", "user-assets"]
